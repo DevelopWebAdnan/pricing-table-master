@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      href="resources/favicon.ico"
+      type="image/x-icon"
+      sizes="96x96"
+    />
+
+    <title>Pricing Table | devChallenges.io</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
+    <style>
+      .be-vietnam-pro-regular {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.be-vietnam-pro-semibold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.be-vietnam-pro-bold {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        color: #121826;
+        font-size: 1rem;
+      }
+
+      /* shared styles */
+      .button {
+        background-color: transparent;
+        border: none;
+        color: #263FA9;
+        font-size: 1rem;
+      }
+      .popular-column, .popular-column .sub-title, .popular-column .description {
+        /* color: #FFFFFF; */
+        /* color: #E5E7EB; */
+        color: #F8FAFC;
+        background-color: #121826;
+        /* padding: 15px 10px; */
+      }
+
+      .pricing-table-section {
+        border: 5px dashed darkblue;
+      }
+      .section-title-container {
+        border: 4px dashed darkcyan;
+        text-align: center;
+        background-image: url('resources/bg-pattern.png');
+        /* background-color: #E5E7EB; */
+        background-color: #F8FAFC;
+        /* background-color: #4D556233; */
+        /* padding: 37px 0; */
+        margin: 37px auto;
+        max-width: 480px;
+      }
+      .section-title-container .title {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+      .description {
+        color: #4D5562;
+        margin-top: 8px;
+      }
+      .table-container{
+        border: 3px dashed darkgoldenrod;
+      }
+      .table-content{
+        border: 2px dashed darkgreen;
+        padding: 37px;
+        text-align: center;
+      }
+      .table-rows{
+        border: 1px dashed darkmagenta;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(10, 1fr);
+      }
+      .table-row {
+        border: 1px solid saddlebrown;
+        grid-column: span 5;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-row: span 1;
+        /* padding: 12px 8px; */
+        /* width: 240px; */
+      }
+      .table-title-row {
+        border: 1px solid aqua;
+        grid-row: span 4;
+      }
+      .title-column, .title-column.popular-column {
+        grid-row: 3 /span 3;
+        padding: 32px 24px;
+      }
+      .title-column .title{
+        font-size: 4rem;
+        margin-top: 12px;
+      }
+      .sub-title{
+        color: #263FA9;
+      }
+      /* .description{color: #4D5562;} */
+      /* .popular-column .title {
+        color: #FFFFFF;
+      } */
+      /* .popular-column .sub-title, .popular-column .description {
+        color: #FFFFFF;
+        color: #F8FAFC;
+      } */
+      .popular-column .sub-title span {
+        /* color: #FFFFFF; */
+        background-color: #263FA9;
+        padding: 4px 16px;
+        border-radius: 50px;
+      }
+       .popular-column .button {
+        /* background-color: #7C4F1E; */
+        color: #F8FAFC;
+        /* color: #E5E7EB; */
+       }
+      .row-title{
+        /* background-color: #E5E7EB; */
+        background-color: #F8FAFC;
+        /* background-color: #4D556233; */
+        text-align: start;
+        /* padding: 15px 10px; */
+      }
+      .row-title, .free-column, .team-column, .popular-column, .enterprise-column, .footer-column {
+        padding: 15px 10px;
+        /* width: 240px; */
+      }
+      .title-column.popular-column {
+        border-radius: 16px 16px 0 0;
+      }
+      /* .team-column{}
+      .enterprise-column{} */
+
+      .table-footer-row{
+        border: 1px solid black;
+      }
+      /* .footer-column {
+        text-align: center;
+      } */
+      .footer-column.popular-column {
+        border-radius: 0 0 16px 16px;
+        background-color: #7C4F1E;
+      }
+      .footer-column .button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        /* justify-content: center; */
+        margin: 8px auto;
+      }
+
+      .author-info {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 16px;
+        color: rgb(55, 65, 81);
+      }
+
+      .author-info a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body class="be-vietnam-pro-regular">
+    <main>
+      <section class="pricing-table-section">
+        <div class="section-title-container">
+          <h1 class="title be-vietnam-pro-bold">Pricing & Plans</h1>
+          <p class="description">Discover the plan that unlocks the transformative power of digital art and join our vibrant community today.</p>
+        </div>
+        <!-- .table-container>.table-content>.table-title>h3.sub-title+h2.title+p.description -->
+        <div class="table-container">
+          <div class="table-content">
+            <div class="table-rows">
+              <div class="table-row table-title-row">
+                <div class="title-column"></div>
+                <div class="title-column">
+                  <h3 class="sub-title">Free</h3>
+                  <h2 class="title be-vietnam-pro-semibold">$0</h2>
+                  <p class="description">Per month</p>
+                </div>
+                <div class="title-column">
+                  <h3 class="sub-title be-vietnam-pro-semibold">Team</h3>
+                <h2 class="title be-vietnam-pro-semibold">$59</h2>
+                <p class="description">Per month</p>
+                </div>
+                <div class="title-column popular-column">
+                <h3 class="sub-title be-vietnam-pro-semibold"><span>Popular</span></h3>
+                <h2 class="title be-vietnam-pro-semibold">$99</h2>
+                <p class="description">Per month</p>                  
+                </div>
+                <div class="title-column">
+                <h3 class="sub-title">Enterprise</h3>
+                <h2 class="title be-vietnam-pro-semibold">$299</h2>
+                <p class="description">Per month</p>
+                </div>
+              </div>
+              <div class="table-row">
+                <h4 class="row-title">Website number</h4>
+                <div class="free-column">01</div>
+                <div class="team-column">10</div>
+                <div class="popular-column">50</div>
+                <div class="enterprise-column">Unlimited</div>
+              </div>
+              <div class="table-row">
+                <h4 class="row-title">Server storage</h4>
+                <div class="free-column">100 GB</div>
+                <div class="team-column">500 GB</div>
+                <div class="popular-column">1 TB</div>
+                <div class="enterprise-column">Unlimited</div>
+              </div>
+              <div class="table-row">
+                <h4 class="row-title">Database</h4>
+                <div class="free-column">-</div>
+                <div class="team-column">15</div>
+                <div class="popular-column">Unlimited</div>
+                <div class="enterprise-column">Unlimited</div>
+              </div>
+              <div class="table-row">
+                <h4 class="row-title">Unmetered Bandwidth</h4>
+                <div class="free-column">-</div>
+                <div class="team-column"><img src="resources/check-1.svg" alt="check-1 icon"></div>
+                <div class="popular-column"><img src="resources/check.svg" alt="check icon"></div>
+                <div class="enterprise-column"><img src="resources/check-1.svg" alt="check-1 icon"></div>
+              </div>
+              <div class="table-row">
+                <h4 class="row-title">SSD Disk</h4>
+                <div class="free-column">-</div>
+                <div class="team-column">-</div>
+                <div class="popular-column"><img src="resources/check.svg" alt="check icon"></div>
+                <div class="enterprise-column"><img src="resources/check-1.svg" alt="check-1 icon"></div>
+              </div>
+              <div class="table-row">
+                <h4 class="row-title">VCPUS Fontworld</h4>
+                <div class="free-column">-</div>
+                <div class="team-column">-</div>
+                <div class="popular-column"><img src="resources/check.svg" alt="check icon"></div>
+                <div class="enterprise-column"><img src="resources/check-1.svg" alt="check-1 icon"></div>
+              </div>
+              <div class="table-row">
+                <h4 class="row-title">Worldpress install</h4>
+                <div class="free-column">-</div>
+                <div class="team-column">-</div>
+                <div class="popular-column"><img src="resources/check.svg" alt="check icon"></div>
+                <div class="enterprise-column"><img src="resources/check-1.svg" alt="check-1 icon"></div>
+              </div>
+              <div class="table-row">
+                <h4 class="row-title">Server speed</h4>
+                <div class="free-column">-</div>
+                <div class="team-column">-</div>
+                <div class="popular-column"><img src="resources/check.svg" alt="check icon"></div>
+                <div class="enterprise-column"><img src="resources/check-1.svg" alt="check-1 icon"></div>
+              </div>
+              <div class="table-row table-footer-row">
+                <div class="footer-column"></div>
+                <div class="footer-column">
+                  <!-- <p class="get-started"> -->
+                    <button class="button be-vietnam-pro-semibold" href="">Get Started 
+                      <img src="resources/down arrow-1.svg" alt="down arrow-1">
+                    </button>
+                  <!-- </p> -->
+                </div>
+                <div class="footer-column">
+                  <!-- <p class="get-started"> -->
+                    <button class="button be-vietnam-pro-semibold" href="">Get Started 
+                      <img src="resources/down arrow-1.svg" alt="down arrow-1">
+                    </button>
+                  <!-- </p> -->
+                </div>
+                <div class="footer-column popular-column">
+                  <!-- <p class="get-started"> -->
+                    <button class="button be-vietnam-pro-semibold" href="">Get Started 
+                      <img src="resources/down arrow.svg" alt="down arrow">
+                    </button>
+                  <!-- </p> -->
+                </div>
+                <div class="footer-column">
+                  <!-- <p class="get-started"> -->
+                    <button class="button be-vietnam-pro-semibold" href="">Get Started 
+                      <img src="resources/down arrow-1.svg" alt="down arrow-1">
+                    </button>
+                  <!-- </p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div class="author-info">
+      Coded by <a href="#">Your Name Here</a> | Challenge by
+      <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
+        >devChallenges.io</a
+      >.
+    </div>
+  </body>
+</html>
