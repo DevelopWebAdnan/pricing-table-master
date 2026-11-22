@@ -66,14 +66,14 @@
         border: 5px dashed darkblue;
       }
       .section-title-container {
-        border: 4px dashed darkcyan;
+        /* border: 4px dashed darkcyan; */
         text-align: center;
         background-image: url('resources/bg-pattern.png');
         /* background-color: #E5E7EB; */
         background-color: #F8FAFC;
-        /* background-color: #4D556233; */
-        /* padding: 37px 0; */
-        margin: 37px auto;
+        border-bottom: 1px solid #4D556233;
+        padding: 37px 0;
+        margin: 0 auto;
         max-width: 480px;
       }
       .section-title-container .title {
@@ -96,6 +96,7 @@
         border: 1px dashed darkmagenta;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+        /* grid-template-columns: calc(210px - repeat(4, 1fr)); */
         grid-template-rows: repeat(10, 1fr);
       }
       .table-row {
@@ -103,9 +104,22 @@
         grid-column: span 5;
         display: grid;
         grid-template-columns: repeat(5, 1fr);
+        /* grid-template-columns: calc(210px, repeat(4, 1fr) - 210px); */
         grid-row: span 1;
         /* padding: 12px 8px; */
         /* width: 240px; */
+      }
+      .table-row .free-column {
+        order: 1;
+      }
+      .table-row .team-column {
+        order: 2;
+      }
+      .table-row .popular-column {
+        order: 3;
+      }
+      .table-row .enterprise-column {
+        order: 4;
       }
       .table-title-row {
         border: 1px solid aqua;
@@ -115,6 +129,20 @@
         grid-row: 3 /span 3;
         padding: 32px 24px;
       }
+      /* .title-column.free-column {
+        order: 1;
+      } */
+      /* .title-column.team-column {
+        order: 2;
+      } */
+      .title-column.popular-column {
+        border-radius: 16px 16px 0 0;
+        /* order: 3; */
+      }
+      /* .title-column.enterprise-column {
+        border-radius: 16px 16px 0 0;
+        order: 4;
+      } */
       .title-column .title{
         font-size: 4rem;
         margin-top: 12px;
@@ -147,13 +175,17 @@
         /* background-color: #4D556233; */
         text-align: start;
         /* padding: 15px 10px; */
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        /* max-width: fit-content; */
+        max-width: 210px;
+        /* min-width: 108px; */
+        overflow: hidden;
+        border: 4px dashed darkcyan;
       }
       .row-title, .free-column, .team-column, .popular-column, .enterprise-column, .footer-column {
         padding: 15px 10px;
         /* width: 240px; */
-      }
-      .title-column.popular-column {
-        border-radius: 16px 16px 0 0;
       }
       /* .team-column{}
       .enterprise-column{} */
@@ -186,6 +218,55 @@
       .author-info a {
         text-decoration: none;
       }
+
+      /* responsive styles */
+      @media screen and (max-width: 640px) {
+        .table-content{
+        /* border: 2px dashed darkgreen; */
+        padding: 16px;
+        /* text-align: center; */
+      }
+      /* .table-rows{
+        border: 1px dashed darkmagenta;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: calc(210px - repeat(4, 1fr));
+        grid-template-rows: repeat(10, 1fr);
+      } */
+      .table-row {
+        /* border: 1px solid saddlebrown;
+        grid-column: span 5;
+        display: grid; */
+        grid-template-columns: repeat(3, 1fr);
+        /* grid-row: span 1; */
+      }
+       .table-row .free-column {
+        /* order: 1; */
+        display: none;
+      }
+      .table-row .team-column {
+        /* order: 2; */
+        display: none;
+      }
+      .table-row .popular-column {
+        order: 4;
+      }
+      .table-row .enterprise-column {
+        order: 3;
+      }
+      .title-column, .title-column.popular-column {
+        grid-row: 3 /span 3;
+        padding: 16px 12px;
+      }
+      /* .row-title{
+        background-color: #F8FAFC;
+        text-align: start;
+        text-wrap: nowrap;
+        text-overflow: ellipsis;
+        border: 4px dashed darkcyan;
+        width: 108px;
+      }  */
+      }
     </style>
   </head>
   <body class="be-vietnam-pro-regular">
@@ -200,13 +281,13 @@
           <div class="table-content">
             <div class="table-rows">
               <div class="table-row table-title-row">
-                <div class="title-column"></div>
-                <div class="title-column">
+                <div class="row-title title-column"></div>
+                <div class="title-column free-column">
                   <h3 class="sub-title">Free</h3>
                   <h2 class="title be-vietnam-pro-semibold">$0</h2>
                   <p class="description">Per month</p>
                 </div>
-                <div class="title-column">
+                <div class="title-column team-column">
                   <h3 class="sub-title be-vietnam-pro-semibold">Team</h3>
                 <h2 class="title be-vietnam-pro-semibold">$59</h2>
                 <p class="description">Per month</p>
@@ -216,7 +297,7 @@
                 <h2 class="title be-vietnam-pro-semibold">$99</h2>
                 <p class="description">Per month</p>                  
                 </div>
-                <div class="title-column">
+                <div class="title-column enterprise-column">
                 <h3 class="sub-title">Enterprise</h3>
                 <h2 class="title be-vietnam-pro-semibold">$299</h2>
                 <p class="description">Per month</p>
@@ -280,14 +361,14 @@
               </div>
               <div class="table-row table-footer-row">
                 <div class="footer-column"></div>
-                <div class="footer-column">
+                <div class="footer-column free-column">
                   <!-- <p class="get-started"> -->
                     <button class="button be-vietnam-pro-semibold" href="">Get Started 
                       <img src="resources/down arrow-1.svg" alt="down arrow-1">
                     </button>
                   <!-- </p> -->
                 </div>
-                <div class="footer-column">
+                <div class="footer-column team-column">
                   <!-- <p class="get-started"> -->
                     <button class="button be-vietnam-pro-semibold" href="">Get Started 
                       <img src="resources/down arrow-1.svg" alt="down arrow-1">
@@ -301,7 +382,7 @@
                     </button>
                   <!-- </p> -->
                 </div>
-                <div class="footer-column">
+                <div class="footer-column enterprise-column">
                   <!-- <p class="get-started"> -->
                     <button class="button be-vietnam-pro-semibold" href="">Get Started 
                       <img src="resources/down arrow-1.svg" alt="down arrow-1">
