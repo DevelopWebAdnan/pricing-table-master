@@ -17,7 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <!--You are welcome to delete these styles or modify them in your own stylesheet -->
     <style>
       .be-vietnam-pro-regular {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -55,26 +54,19 @@
         font-size: 1rem;
       }
       .popular-column, .popular-column .sub-title, .popular-column .description {
-        /* color: #FFFFFF; */
-        /* color: #E5E7EB; */
-        color: #F8FAFC;
+        color: #E5E7EB;
         background-color: #121826;
-        /* padding: 15px 10px; */
       }
 
-      /* .pricing-table-section {
-        border: 5px dashed darkblue;
-      } */
+      /* section styles */
       .section-title-container {
         text-align: center;
         background-image: url('resources/bg-pattern.png');
-        /* background-color: #E5E7EB; */
         background-color: #F8FAFC;
         border-bottom: 1px solid #4D556233;
-        padding: 37px 0;
+        padding: 50px 0;
       }
        .section-title-content {
-        /* border: 4px dashed darkcyan; */
         margin: 0 auto;
         max-width: 450px;
       }
@@ -86,30 +78,37 @@
         color: #4D5562;
         margin-top: 8px;
       }
-      /* .table-container{
-        border: 3px dashed darkgoldenrod;
-      } */
       .table-content{
-        /* border: 2px dashed darkgreen; */
-        padding: 37px;
+        padding: 50px;
         text-align: center;
+        background-color: #FFFFFF;
       }
       .table-rows{
-        /* border: 1px dashed darkmagenta; */
         display: grid;
         grid-template-columns: 210px repeat(4, 1fr);
-        /* grid-template-columns: calc(210px - repeat(4, 1fr)); */
         grid-template-rows: repeat(10, 1fr);
       }
       .table-row {
-        /* border: 1px solid saddlebrown; */
+        border-bottom: 1px solid #4D556233;
         grid-column: span 5;
         display: grid;
         grid-template-columns: 210px repeat(4, 1fr);
-        /* grid-template-columns: calc(210px, repeat(4, 1fr) - 210px); */
         grid-row: span 1;
-        /* padding: 12px 8px; */
-        /* width: 240px; */
+      }
+      .row-title {
+        border-bottom: 1px solid #4D556233;
+      }
+      .table-row:nth-child(1) {
+        border-bottom: none;
+      }
+      .table-row:nth-child(10) {
+        border-bottom: none;
+      }
+      .table-row:nth-child(2) {
+        border-radius: 16px 0 0 0;
+      }
+      .table-row:nth-child(9) {
+        border-radius: 0 0 0 16px;
       }
       .table-row .free-column {
         order: 1;
@@ -119,32 +118,23 @@
       }
       .table-row .popular-column {
         order: 3;
+        border-bottom: none;
       }
       .table-row .enterprise-column {
         order: 4;
       }
       .table-title-row {
-        /* border: 1px solid aqua; */
         grid-row: span 4;
       }
       .title-column, .title-column.popular-column {
         grid-row: 3 /span 3;
+      }
+      .title-column.free-column, .title-column.team-column, .title-column.popular-column, .title-column.enterprise-column {
         padding: 32px 24px;
       }
-      /* .title-column.free-column {
-        order: 1;
-      } */
-      /* .title-column.team-column {
-        order: 2;
-      } */
       .title-column.popular-column {
         border-radius: 16px 16px 0 0;
-        /* order: 3; */
       }
-      /* .title-column.enterprise-column {
-        border-radius: 16px 16px 0 0;
-        order: 4;
-      } */
       .title-column .title{
         font-size: 4rem;
         margin-top: 12px;
@@ -152,52 +142,28 @@
       .sub-title{
         color: #263FA9;
       }
-      /* .description{color: #4D5562;} */
-      /* .popular-column .title {
-        color: #FFFFFF;
-      } */
-      /* .popular-column .sub-title, .popular-column .description {
-        color: #FFFFFF;
+      .popular-column .title {
         color: #F8FAFC;
-      } */
+      }
       .popular-column .sub-title span {
-        /* color: #FFFFFF; */
         background-color: #263FA9;
         padding: 4px 16px;
         border-radius: 50px;
       }
        .popular-column .button {
-        /* background-color: #7C4F1E; */
-        color: #F8FAFC;
-        /* color: #E5E7EB; */
+        color: #E5E7EB;
        }
       .row-title{
-        /* background-color: #E5E7EB; */
         background-color: #F8FAFC;
-        /* background-color: #4D556233; */
         text-align: start;
-        /* padding: 15px 10px; */
         text-wrap: nowrap;
         text-overflow: ellipsis;
-        /* max-width: fit-content; */
         max-width: 210px;
-        /* min-width: 108px; */
         overflow: hidden;
-        border: 4px dashed darkcyan;
       }
       .row-title, .free-column, .team-column, .popular-column, .enterprise-column, .footer-column {
         padding: 15px 10px;
-        /* width: 240px; */
       }
-      /* .team-column{}
-      .enterprise-column{} */
-
-      /* .table-footer-row{
-        border: 1px solid black;
-      } */
-      /* .footer-column {
-        text-align: center;
-      } */
       .footer-column.popular-column {
         border-radius: 0 0 16px 16px;
         background-color: #7C4F1E;
@@ -205,8 +171,7 @@
       .footer-column .button {
         display: flex;
         align-items: center;
-        gap: 4px;
-        /* justify-content: center; */
+        gap: 2px;
         margin: 8px auto;
       }
 
@@ -224,32 +189,19 @@
       /* responsive styles */
       @media screen and (max-width: 640px) {
         .table-content{
-        /* border: 2px dashed darkgreen; */
-        padding: 4px;
-        /* text-align: center; */
+        padding: 8px;
       }
       .table-rows{
-        /* border: 1px dashed darkmagenta;
-        display: grid; */
         grid-template-columns: 108px repeat(2, 1fr);
-        /* grid-template-columns: repeat(2, 1fr); */
-        /* grid-template-columns: calc(210px - repeat(4, 1fr));
-        grid-template-rows: repeat(10, 1fr); */
       }
       .table-row {
-        /* border: 1px solid saddlebrown; */
         grid-column: span 3;
-        /* display: grid; */
         grid-template-columns: 108px repeat(2, 1fr);
-        /* grid-template-columns: repeat(2, 1fr); */
-        /* grid-row: span 1; */
       }
        .table-row .free-column {
-        /* order: 1; */
         display: none;
       }
       .table-row .team-column {
-        /* order: 2; */
         display: none;
       }
       .table-row .popular-column {
@@ -258,25 +210,15 @@
       .table-row .enterprise-column {
         order: 3;
       }
-       /* .table-title-row {
-        grid-row: span 4;
-      } */
-      .title-column, .title-column.popular-column {
-        grid-row: 3 /span 3;
-        padding: 10px 8px;
+       .table-title-row {
+        grid-row: span 3;
+      }
+      .title-column.free-column, .title-column.team-column, .title-column.popular-column, .title-column.enterprise-column {
+        padding: 24px 12px;
       }
       .title-column .title{
         font-size: 2rem;
-        /* margin-top: 12px; */
       }
-      /* .row-title{
-        background-color: #F8FAFC;
-        text-align: start;
-        text-wrap: nowrap;
-        text-overflow: ellipsis;
-        border: 4px dashed darkcyan;
-        width: 108px;
-      }  */
         .footer-column .button img {
           display: none;
       }
@@ -284,59 +226,24 @@
       /* for tablet devices */
       @media screen and (min-width: 641px) and (max-width: 1032px) {
         .table-content{
-        /* border: 2px dashed darkgreen; */
-        padding: 12px;
-        /* text-align: center; */
+        padding: 16px;
       }
       .table-rows{
-        /* border: 1px dashed darkmagenta;
-        display: grid; */
         grid-template-columns: 210px repeat(3, 1fr);
-        /* grid-template-columns: repeat(2, 1fr); */
-        /* grid-template-columns: calc(210px - repeat(4, 1fr));
-        grid-template-rows: repeat(10, 1fr); */
       }
       .table-row {
-        /* border: 1px solid saddlebrown; */
         grid-column: span 4;
-        /* display: grid; */
         grid-template-columns: 210px repeat(3, 1fr);
-        /* grid-template-columns: repeat(2, 1fr); */
-        /* grid-row: span 1; */
       }
        .table-row .free-column {
-        /* order: 1; */
         display: none;
       }
-      /* .table-row .team-column {
-        order: 2;
-        display: none;
-      } */
-      /* .table-row .popular-column {
-        order: 3;
-      }
-      .table-row .enterprise-column {
-        order: 4;
-      } */
-      .title-column, .title-column.popular-column {
-        grid-row: 3 /span 3;
-        padding: 20px 16px;
+       .title-column.free-column, .title-column.team-column, .title-column.popular-column, .title-column.enterprise-column {
+        padding: 24px 12px;
       }
       .title-column .title{
         font-size: 3rem;
-        /* margin-top: 12px; */
       }
-      /* .row-title{
-        background-color: #F8FAFC;
-        text-align: start;
-        text-wrap: nowrap;
-        text-overflow: ellipsis;
-        border: 4px dashed darkcyan;
-        width: 108px;
-      }  */
-        /* .footer-column .button img {
-          display: none;
-      } */
       }
     </style>
   </head>
@@ -349,12 +256,9 @@
             <p class="description">Discover the plan that unlocks the transformative power of digital art and join our vibrant community today.</p>
           </div>
         </div>
-        <!-- .table-container>.table-content>.table-title>h3.sub-title+h2.title+p.description -->
-        <div class="table-container">
           <div class="table-content">
             <div class="table-rows">
               <div class="table-row table-title-row">
-                <!-- <div class="row-title title-column"></div> -->
                 <div class="title-column"></div>
                 <div class="title-column free-column">
                   <h3 class="sub-title">Free</h3>
@@ -436,41 +340,32 @@
               <div class="table-row table-footer-row">
                 <div class="footer-column"></div>
                 <div class="footer-column free-column">
-                  <!-- <p class="get-started"> -->
                     <button class="button be-vietnam-pro-semibold" href="">Get Started 
                       <img src="resources/down arrow-1.svg" alt="down arrow-1">
                     </button>
-                  <!-- </p> -->
                 </div>
                 <div class="footer-column team-column">
-                  <!-- <p class="get-started"> -->
                     <button class="button be-vietnam-pro-semibold" href="">Get Started 
                       <img src="resources/down arrow-1.svg" alt="down arrow-1">
                     </button>
-                  <!-- </p> -->
                 </div>
                 <div class="footer-column popular-column">
-                  <!-- <p class="get-started"> -->
                     <button class="button be-vietnam-pro-semibold" href="">Get Started 
                       <img src="resources/down arrow.svg" alt="down arrow">
                     </button>
-                  <!-- </p> -->
                 </div>
                 <div class="footer-column enterprise-column">
-                  <!-- <p class="get-started"> -->
                     <button class="button be-vietnam-pro-semibold" href="">Get Started 
                       <img src="resources/down arrow-1.svg" alt="down arrow-1">
                     </button>
-                  <!-- </p> -->
                 </div>
               </div>
             </div>
           </div>
-        </div>
       </section>
     </main>
     <div class="author-info">
-      Coded by <a href="#">Your Name Here</a> | Challenge by
+      Coded by <a href="https://developwebadnan.github.io/web-dev-portfolio/">Adnan</a> | Challenge by
       <a href="https://www.devchallenges.io?ref=challenge" target="_blank"
         >devChallenges.io</a
       >.
